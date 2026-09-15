@@ -1,0 +1,148 @@
+.player-selector {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+}
+
+.pawn-button {
+  position: relative;
+
+  width: 65px;
+  height: 90px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  opacity: 0.35;
+
+  filter: grayscale(1);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+.pawn-button:hover {
+  transform:
+    translateY(-5px);
+}
+
+.pawn-button.active {
+  opacity: 1;
+
+  filter: grayscale(0);
+
+  transform:
+    translateY(-6px);
+}
+
+.pawn {
+  position: relative;
+
+  display: block;
+
+  width: 45px;
+  height: 60px;
+
+  margin: auto;
+}
+
+.pawn-head {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow:
+    inset 5px 5px 8px rgba(255, 255, 255, 0.45),
+    inset -5px -5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pawn-body {
+  position: absolute;
+
+  left: 50%;
+  top: 20px;
+
+  transform:
+    translateX(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  border-radius:
+    50% 50% 35% 35%;
+
+  background: currentColor;
+
+  box-shadow:
+    inset 5px 5px 8px rgba(255, 255, 255, 0.35),
+    inset -5px -5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pawn-button {
+  color: #aaa;
+}
+
+.pawn-button.green {
+  color: #24e26d;
+}
+
+.pawn-button.red {
+  color: #ff3b4f;
+}
+
+.pawn-button.blue {
+  color: #2e9cff;
+}
+
+.pawn-button.yellow {
+  color: #ffd52a;
+}
+
+.pawn-button.green .pawn {
+  filter:
+    drop-shadow(0 0 10px #24e26d);
+}
+
+.pawn-button.red .pawn {
+  filter:
+    drop-shadow(0 0 10px #ff3b4f);
+}
+
+.pawn-button.blue .pawn {
+  filter:
+    drop-shadow(0 0 10px #2e9cff);
+}
+
+.pawn-button.yellow .pawn {
+  filter:
+    drop-shadow(0 0 10px #ffd52a);
+}
+
+.player-number {
+  display: block;
+
+  margin-top: 5px;
+
+  color: white;
+
+  font-weight: bold;
+}

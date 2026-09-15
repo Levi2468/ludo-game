@@ -1,0 +1,194 @@
+.game-dice-area {
+  position: absolute;
+
+  right: 35px;
+  bottom: 25px;
+
+  z-index: 100;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.dice-title {
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.6);
+}
+
+.game-dice-row {
+  display: flex;
+
+  gap: 12px;
+}
+
+.game-die {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #d6d6d6
+    );
+
+  border:
+    1px solid rgba(255,255,255,.8);
+
+  box-shadow:
+    inset 5px 5px 10px rgba(255,255,255,.9),
+    inset -5px -5px 10px rgba(0,0,0,.22),
+    0 10px 25px rgba(0,0,0,.45);
+
+  transition:
+    transform .2s ease;
+}
+
+.rolling-die {
+  animation:
+    diceRoll .16s infinite alternate;
+}
+
+.game-dot {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #161616;
+
+  box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,.35);
+}
+
+.game-dot-1 {
+  left: 14px;
+  top: 14px;
+}
+
+.game-dot-2 {
+  right: 14px;
+  top: 14px;
+}
+
+.game-dot-3 {
+  left: 14px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.game-dot-4 {
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.game-dot-5 {
+  right: 14px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.game-dot-6 {
+  left: 14px;
+  bottom: 14px;
+}
+
+.game-dot-7 {
+  right: 14px;
+  bottom: 14px;
+}
+
+.roll-button {
+  min-width: 150px;
+
+  padding: 11px 20px;
+
+  border:
+    1px solid rgba(255,255,255,.45);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.3),
+      rgba(255,255,255,.08)
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.6),
+    0 8px 25px rgba(0,0,0,.35);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.roll-button:hover:not(:disabled) {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,.3),
+    0 10px 30px rgba(0,0,0,.4);
+}
+
+.roll-button:disabled {
+  opacity: .45;
+
+  cursor: not-allowed;
+}
+
+@keyframes diceRoll {
+
+  0% {
+    transform:
+      rotate(-12deg)
+      scale(.92);
+  }
+
+  100% {
+    transform:
+      rotate(12deg)
+      scale(1.08);
+  }
+}

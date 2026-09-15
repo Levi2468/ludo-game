@@ -1,0 +1,246 @@
+.winner-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter:
+    blur(10px);
+
+  animation:
+    overlayAppear .5s ease forwards;
+}
+
+.winner-green {
+  background:
+    radial-gradient(
+      circle,
+      rgba(32,220,105,.7),
+      rgba(2,45,23,.94)
+    );
+}
+
+.winner-red {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,64,85,.7),
+      rgba(60,5,12,.94)
+    );
+}
+
+.winner-blue {
+  background:
+    radial-gradient(
+      circle,
+      rgba(48,156,255,.7),
+      rgba(3,28,62,.94)
+    );
+}
+
+.winner-yellow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,213,42,.7),
+      rgba(65,51,2,.94)
+    );
+}
+
+.winner-card {
+  min-width: 350px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  color: white;
+
+  border:
+    1px solid rgba(255,255,255,.4);
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.13);
+
+  backdrop-filter:
+    blur(25px);
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.5),
+    inset 0 1px rgba(255,255,255,.6);
+
+  animation:
+    winnerPop .7s cubic-bezier(.17,.89,.32,1.28);
+}
+
+.winner-pawn {
+  position: relative;
+
+  width: 70px;
+  height: 90px;
+
+  margin:
+    0 auto 20px;
+
+  filter:
+    drop-shadow(
+      0 0 20px currentColor
+    );
+}
+
+.winner-pawn-head {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+.winner-pawn-body {
+  position: absolute;
+
+  left: 50%;
+  top: 32px;
+
+  transform:
+    translateX(-50%);
+
+  width: 62px;
+  height: 58px;
+
+  border-radius:
+    50% 50% 35% 35%;
+
+  background: currentColor;
+}
+
+.winner-green {
+  color: #20dc69;
+}
+
+.winner-red {
+  color: #ff4055;
+}
+
+.winner-blue {
+  color: #309cff;
+}
+
+.winner-yellow {
+  color: #ffd52a;
+}
+
+.winner-label {
+  color: rgba(255,255,255,.7);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 5px;
+}
+
+.winner-card h1 {
+  margin-top: 8px;
+
+  font-size: 46px;
+
+  letter-spacing: 4px;
+
+  color: white;
+}
+
+.winner-card p {
+  margin-top: 4px;
+
+  color:
+    rgba(255,255,255,.85);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.home-button {
+  margin-top: 30px;
+
+  padding: 14px 30px;
+
+  border:
+    1px solid rgba(255,255,255,.55);
+
+  border-radius: 14px;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,.16);
+
+  backdrop-filter:
+    blur(10px);
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.home-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(255,255,255,.25);
+}
+
+@keyframes overlayAppear {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes winnerPop {
+
+  from {
+    transform:
+      scale(.65)
+      translateY(30px);
+
+    opacity: 0;
+  }
+
+  to {
+    transform:
+      scale(1)
+      translateY(0);
+
+    opacity: 1;
+  }
+}

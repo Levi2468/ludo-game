@@ -1,0 +1,102 @@
+.game-pawn {
+  position: relative;
+
+  width: 28px;
+  height: 34px;
+
+  border: none;
+
+  background: transparent;
+
+  padding: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+.pawn-clickable {
+  pointer-events: auto;
+
+  cursor: pointer;
+}
+
+.game-pawn-head {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow:
+    inset 2px 2px 3px rgba(255,255,255,.65),
+    inset -2px -2px 3px rgba(0,0,0,.3);
+}
+
+.game-pawn-body {
+  position: absolute;
+
+  left: 50%;
+  top: 10px;
+
+  transform:
+    translateX(-50%);
+
+  width: 21px;
+  height: 22px;
+
+  border-radius:
+    50% 50% 35% 35%;
+
+  background: currentColor;
+
+  box-shadow:
+    inset 2px 2px 4px rgba(255,255,255,.45),
+    inset -3px -3px 4px rgba(0,0,0,.3);
+}
+
+.pawn-green {
+  color: #20dc69;
+}
+
+.pawn-red {
+  color: #ff4055;
+}
+
+.pawn-blue {
+  color: #309cff;
+}
+
+.pawn-yellow {
+  color: #ffd52a;
+}
+
+.pawn-active {
+  animation:
+    pawnPulse 0.8s infinite alternate;
+}
+
+@keyframes pawnPulse {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+.pawn-clickable:hover {
+  transform:
+    scale(1.18);
+}
