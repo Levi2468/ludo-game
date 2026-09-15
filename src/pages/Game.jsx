@@ -197,7 +197,7 @@ function Game({
 
         elapsed += 100;
 
-        if (elapsed >= 5000) {
+        if (elapsed >= 2000) {
 
           clearInterval(interval);
 
